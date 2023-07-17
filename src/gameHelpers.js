@@ -6,3 +6,26 @@ export const createStage = () =>
   Array.from(Array(STAGE_HEIGHT), () =>
     new Array(STAGE_WIDTH).fill([0, 'clear'])
   )
+
+
+export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
+  for (let y = 0; y < player.tetromino.length; y += 1) {
+    for (let x = 0; x < player.tetromino[y].length; x += 1) {
+      // 1. check that we've on an actual Tetromion cell
+      if (player.tetromino[y][x] !== 0) {
+        //2. check that our move is inside the garme areas height(y)
+        //바닥 X
+        //3. check that our move is inside the game areas width (x) 
+        if (!stage[y + player.pos.y + moveY] ||
+          !stage[y + player.pos.y + moveY][x + player.pos.x + moveX] ||
+          stage[y + player.pos.y + moveY][x + player.pos.x + moveX][1] !== 'clear'
+        ) {
+          return true;
+        }
+
+
+
+      }
+    }
+  }
+}

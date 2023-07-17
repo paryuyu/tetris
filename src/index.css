@@ -1,9 +1,23 @@
-body {
- margin:0
+@font-face{
+  font-family:'VT323';
+  src: url('fonts/VT323.ttf') format('truetype');
 }
 
-/* @font-face{
-  font-family:'VT323';
-  src: url('fonts/VT323/ttf') format('ttf');
 
-} */
+@font-face{
+  font-family:'Orbitron';
+  src: url('fonts/Orbitron.ttf') format('truetype');
+}
+
+
+
+body {
+ margin:0;
+ font-family: Orbitron;
+}
+
+
+button{
+ font-family: Orbitron;
+}
+
